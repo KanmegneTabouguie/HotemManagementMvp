@@ -1,0 +1,162 @@
+body {
+    background-color: #f8f9fa; /* Light grey background for overall page */
+    color: #333; /* Dark grey text color for readability */
+}
+h1 {
+    color: #0056b3; /* Blue color for the main heading */
+    font-weight: bold; /* Make the main heading bold */
+}
+.card {
+    border: none; /* Remove border */
+    border-radius: 20px; /* Increase border radius */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition for box shadow */
+}
+
+.card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+}
+
+.card-header {
+    background: linear-gradient(135deg, #0056b3, #0085ff); /* Gradient background */
+    border-top-left-radius: 20px; /* Adjust border radius */
+    border-top-right-radius: 20px; /* Adjust border radius */
+    color: #fff; /* White text color */
+    font-weight: bold;
+    padding: 1rem; /* Add padding */
+}
+
+.card-img-top {
+    position: relative; /* Position relative for image overlay */
+    border-radius: 20px 20px 0 0; /* Adjust border radius */
+}
+
+.card-img-overlay {
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+    border-radius: 20px; /* Adjust border radius */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.card-img-top:hover .card-img-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Darken overlay on hover */
+}
+
+.preference-btn {
+    color: #0056b3; /* Blue color for preference button */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.preference-btn:hover {
+    color: #f00; /* Red color on hover */
+}
+
+.card-body {
+    background-color: #fff; /* White background for card body */
+}
+.btn-primary {
+    background-color: #0056b3; /* Blue background for buttons */
+    border-color: #0056b3; /* Blue border for buttons */
+}
+.btn-primary:hover {
+    background-color: #004494; /* Darker blue for button hover state */
+    border-color: #004494; /* Darker blue border for button hover state */
+}
+.pagination .page-item.active .page-link {
+    background-color: #0056b3; /* Blue background for active page link */
+    border-color: #0056b3; /* Blue border for active page link */
+}
+
+#liveChatButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.text-success.blink {
+    position: absolute;
+    animation: blink 1s infinite;
+    margin-right: 5px; /* Adjust the margin to properly position the indicator */
+}
+/* Chat Modal */
+#liveChatButton i {
+    font-size: 24px; /* Increase the font size of the chat icon */
+}
+
+
+#liveChatModal .modal-content {
+    border-radius: 20px; /* Rounded corners for modal */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+}
+
+#liveChatModal .modal-header {
+    background-color: #007bff; /* Blue background for modal header */
+    color: #fff; /* White text color for modal header */
+    border-top-left-radius: 20px; /* Adjust border radius */
+    border-top-right-radius: 20px; /* Adjust border radius */
+}
+
+#liveChatModal .modal-body {
+    max-height: 400px; /* Limit height of modal body with scrollbar */
+    overflow-y: auto; /* Enable vertical scrollbar if content exceeds max height */
+}
+
+#liveChatModal .modal-footer {
+    border-top: none; /* Remove border from modal footer */
+}
+
+#liveChatModal .form-control {
+    border-radius: 20px; /* Rounded corners for form inputs */
+}
+
+#liveChatModal #chatInput {
+    border-radius: 20px; /* Rounded corners for chat input */
+}
+
+#liveChatModal #sendButton {
+    border-radius: 20px; /* Rounded corners for send button */
+    background-color: #007bff; /* Blue background for send button */
+    color: #fff; /* White text color for send button */
+}
+
+#liveChatModal #sendButton:hover {
+    background-color: #0056b3; /* Darker blue background on hover */
+}
+
+/* Chat Messages */
+#chatMessages {
+    max-height: 300px; /* Limit height of chat messages with scrollbar */
+    overflow-y: auto; /* Enable vertical scrollbar if content exceeds max height */
+    padding: 10px; /* Add padding */
+}
+
+.message {
+    margin-bottom: 10px; /* Add space between messages */
+    padding: 10px; /* Add padding */
+    border-radius: 10px; /* Rounded corners for messages */
+}
+
+.user-message {
+    background-color: #007bff; /* Blue background for user messages */
+    color: #fff; /* White text color for user messages */
+    text-align: right; /* Align user messages to the right */
+}
+
+.bot-message {
+    background-color: #f8f9fa; /* Light grey background for bot messages */
+    color: #333; /* Dark grey text color for bot messages */
+    text-align: left; /* Align bot messages to the left */
+}
+
+.timestamp {
+    display: block; /* Display timestamp below message */
+    font-size: 12px; /* Smaller font size for timestamp */
+    color: #aaa; /* Light grey color for timestamp */
+    margin-top: 5px; /* Add space between message and timestamp */
+}
+

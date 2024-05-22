@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Room</title>
+    <link rel="stylesheet" href="./css/update_room.css">
+</head>
+<body>
+    <div class="container">
+        <div class="text-center">
+            <img src="./Assets/hill london.png" alt="Logo" class="logo" width="100px" height="70px">
+        </div>
+        <h2>Update Room</h2>
+        <form id="updateRoomForm">
+            <div class="form-group">
+                <label for="room_number">Room Number</label>
+                <input type="text" id="room_number" name="room_number" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="type">Type</label>
+                <input type="text" id="type" name="type" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="price_per_night">Price Per Night</label>
+                <input type="number" id="price_per_night" name="price_per_night" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="availability">Availability</label>
+                <select id="availability" name="availability" class="form-control" required>
+                    <option value="true">Available</option>
+                    <option value="false">Not Available</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="image">Image URL</label>
+                <input type="url" id="image" name="image" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Room</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../scripts/updateRoom.js"></script>
+</body>
+</html>

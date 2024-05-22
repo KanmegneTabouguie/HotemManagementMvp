@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partial Update Room</title>
+    <link href="./css/partialupdate.css" rel="stylesheet"> <!-- Link to external CSS file -->
+
+</head>
+<body>
+    <div class="container">
+        <div class="text-center">
+            <img src="./Assets/hill london.png" alt="Logo" class="logo" width="100px" height="70px">
+        </div>
+        <h2>Partial Update Room</h2>
+        <form id="partialUpdateRoomForm">
+            <div class="form-group">
+                <label for="roomNumber">Room Number</label>
+                <input type="text" class="form-control" id="roomNumber" name="room_number" placeholder="Enter new room number">
+            </div>
+            <div class="form-group">
+                <label for="roomType">Type</label>
+                <input type="text" class="form-control" id="roomType" name="type" placeholder="Enter new type">
+            </div>
+            <div class="form-group">
+                <label for="pricePerNight">Price Per Night</label>
+                <input type="number" class="form-control" id="pricePerNight" name="price_per_night" placeholder="Enter new price per night">
+            </div>
+            <div class="form-group">
+                <label for="availability">Availability</label>
+                <select class="form-control" id="availability" name="availability">
+                    <option value="">Select Availability</option>
+                    <option value="true">Available</option>
+                    <option value="false">Not Available</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="image">Image URL</label>
+                <input type="text" class="form-control" id="image" name="image" placeholder="Enter new image URL">
+            </div>
+            <button type="submit" class="btn btn-primary">Update Room</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../scripts/partialUpdateRoom.js"></script>
+</body>
+</html>

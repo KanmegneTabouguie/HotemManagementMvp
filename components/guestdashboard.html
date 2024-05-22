@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="./css/guestdashboard.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Logout link with icon -->
+        <a href="#" id="logoutButton" class="text-dark"><i class="bi bi-box-arrow-left h1"></i></a>
+
+        <h1 class="text-center mb-4">Guest Dashboard</h1>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <input type="text" id="searchInput" class="form-control" placeholder="Search by room number...">
+            </div>
+            <div class="col-md-6">
+                <select id="filterSelect" class="form-control">
+                    <option value="">All Types</option>
+                    <option value="single">Single</option>
+                    <option value="double">Double</option>
+                    <option value="suite">Suite</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" id="roomCards">
+            <!-- Room cards will be dynamically added here -->
+        </div>
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center" id="paginationControls">
+                <!-- Pagination controls will be dynamically added here -->
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Live Chat Button Icon -->
+    <div id="liveChatButton" class="btn btn-primary btn-floating">
+        <i class="bi bi-chat-dots"></i>
+    </div>
+
+    <!-- Add this modal at the end of your HTML body -->
+<div class="modal" id="liveChatModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <span id="onlineIndicator" class="text-success">&#8226;</span> Live Chat
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="chatMessages" style="height: 200px; overflow-y: scroll;"></div>
+                <input type="text" id="chatInput" class="form-control mt-2" placeholder="Type your message...">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../scripts/logout.js"></script>
+    <script src="../scripts/guestsectionroom.js"></script>
+    <script src="../scripts/livechat.js"></script> <!-- JavaScript for live chat functionality -->
+</body>
+</html>

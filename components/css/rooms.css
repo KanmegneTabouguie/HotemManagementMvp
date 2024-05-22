@@ -1,0 +1,45 @@
+/* Add more spacing */
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #109af0; /* Blue */
+    color: #ffffff; /* White */
+}
+
+.btn-group .btn {
+    margin-right: 10px; /* Increased margin */
+    background-color: #1a78dd; /* Blue */
+    color: #ffffff; /* White */
+    border-color: #007BFF; /* Blue */
+}
+
+.btn-group .btn:last-child {
+    margin-right: 0;
+}
+
+.mt-5 {
+    margin-top: 30px; /* Increased margin */
+}
+
+.mb-3 {
+    margin-bottom: 20px; /* Increased margin */
+}
+
+.mt-4 {
+    margin-top: 20px; /* Increased margin */
+}
+
+.container {
+    margin-bottom: 40px; /* Increased margin */
+}
+
+/* Custom CSS for modal */
+.modal-body label {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: .5rem;
+}
+
+.modal-body input {
+    width: 100%;
+}

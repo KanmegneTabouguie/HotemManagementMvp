@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <meta name="description" content="Explore hill landon rooms and manage rooms.">
+    <meta name="keywords" content="rooms, bookings, hotel, accommodation, hill landon">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./Assets/hill london.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Custom CSS -->
+    <link href="./css/style.css" rel="stylesheet">
+    <!-- Bootstrap Datepicker CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+
+<!-- Chart.js CSS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="text-center">
+            <img src="./Assets/hill london.png" alt="Logo" class="logo" length="50px" width="50px">
+        </div>
+        <h2>Admin Panel</h2>
+    
+        <ul>
+            <li><a href="#" class="active"><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="./users.html"><i class="fas fa-user"></i>Users</a></li>
+            <li><a href="./rooms.html"><i class="fas fa-bed"></i>Rooms</a></li>
+            <li><a href="#analytics-section"><i class="fas fa-chart-bar"></i>Analytics-Rooms</a></li>
+            <li><a href="#analytics-users"><i class="fas fa-chart-pie"></i>Reports-Users</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i>Settings</a></li>
+            <li><a href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Page content -->
+    <div class="content">
+        <div class="header">
+            <h2 class="animate__animated animate__bounceInDown animate__infinite">Welcome to the Admin Dashboard</h2>
+            
+            <div class="notification">
+                <i class="fas fa-bell"></i>
+            </div>
+            
+        </div>
+        <div class="main">
+            <h3>Dashboard Overview</h3>
+            <div class="row">
+                <div class="calendar-container">
+                    <!-- Calendar -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div id="calendar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clock">
+                    <!-- Clock -->
+                    <div id="clock" class="clock"></div>
+                </div>
+            </div>
+            <hr>
+
+            <h4>Room Overview Analystics</h4>
+            <!-- Room type distribution chart and room price histogram -->
+            <div class="row" id="analytics-section">
+                <div class="col-md-6">
+                    <canvas id="roomTypeChart"></canvas>
+                </div>
+                <div class="col-md-6">
+                    <div class="vertical-line"></div>
+                    <canvas id="roomPriceHistogram"></canvas>
+                </div>
+            </div>
+            <hr>
+
+            <h4>Users Overview Analystics</h4>
+       <!-- Custom html code representation related to users -->
+<div class="container"  id="analytics-users" >
+    <div class="row">
+        <div class="col-md-6">
+            <div class="chart-container">
+                <canvas id="userRoleChart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="chart-container">
+                <canvas id="emailDomainChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+       <!-- Custom  for weather html code-->
+
+       <div class="weather-widget card">
+        <h4 class="card-header">Weather <i class="fas fa-sun"></i></h4>
+        <div class="card-body">
+            <div id="weatherInfo" class="text-center"></div>
+        </div>
+    </div>
+    <hr>
+           <!-- Custom  for News html code-->
+           <div class="news-feed">
+            <h4 class="mb-4">Latest News</h4>
+            <div class="news-container">
+                <!-- News items will be dynamically added here -->
+                <div class="row" id="newsList">
+                    <!-- News items will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+        <hr>
+                   <!-- Custom  for Notes Widget html code-->
+                   <div class="notes-widget card">
+                    <h4 class="card-header"><i class="bi bi-pencil-square"></i> Notes</h4>
+                    <div class="card-body">
+                        <textarea id="notesArea" class="form-control" placeholder="Write your notes here..."></textarea>
+                        <button onclick="saveNotes()" class="btn btn-primary mt-3"><i class="bi bi-save"></i> Save Notes</button>
+                    </div>
+                </div>
+                
+            <!-- Custom  for interactive map html code-->
+
+                <div id="map" style="height: 400px;"></div>
+
+                    <!-- Custom  for footer html code-->
+
+        
+                <footer class="footer mt-auto py-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>&copy; 2024 Hill Landon Hotel. All rights reserved.</p>
+                            </div>
+                            <div class="col-md-6 text-md-right">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                                    <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                                    <li class="list-inline-item"><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                
+
+        </div>
+    </div>
+
+
+   
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Clock JS -->
+    <script src="../scripts/clock.js"></script>
+    <!-- Your logout.js script -->
+    <script src="../scripts/logout.js"></script>
+      <!-- Custom Script for Chart.js -->
+      <script src="../scripts/roomChart.js"></script>
+      <!-- Custom Script for histogram -->
+      <script src="../scripts/histogramroom.js"></script>
+       <!-- Custom Script for user role distri -->
+       <script src="../scripts/userRoleDistribution.js"></script>
+       <!-- Custom Script for user role distri -->
+       <script src="../scripts/emailDomainAnalysis.js"></script>
+
+       <!-- Custom Script for weather paris -->
+       <script src="../scripts/weather.js"></script>
+       <!-- Custom Script for News -->
+       <script src="../scripts/news.js"></script>
+       <!-- Custom Script for notewidget -->
+       <script src="../scripts/notewidget.js"></script>
+       <!-- Custom Script for map interaction -->
+       <script src="../scripts/map.js"></script>
+       <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Bootstrap Datepicker JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <!-- Custom Script for Datepicker -->
+    <script>
+        // Initialize the calendar
+        $(document).ready(function() {
+            $('#calendar').datepicker({
+                format: "dd-mm-yyyy",
+                todayHighlight: true,
+                autoclose: true,
+                clearBtn: true,
+                calendarWeeks: true,
+                disableTouchKeyboard: true,
+                immediateUpdates: true
+            }).on('changeDate', function(e) {
+                // You can add custom logic here for handling date changes
+            });
+        });
+    </script>
+</body> 
+</html>
