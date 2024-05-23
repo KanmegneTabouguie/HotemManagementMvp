@@ -2,7 +2,7 @@ Sure, here's a structured README for your hotel management system:
 
 ---
 
-# Hotel Management System (Backend)
+# Hotel Management System 
 
 This repository contains the backend code for a hotel management system. It provides API endpoints for managing rooms and users.
 
