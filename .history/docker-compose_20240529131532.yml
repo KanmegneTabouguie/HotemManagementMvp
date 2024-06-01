@@ -1,0 +1,20 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3067:3067"
+    environment:
+      - DB_HOST=database
+      - DB_USER=root
+      - DB_PASSWORD=yvan2021
+      - DB_NAME=hotelmanagement
+    depends_on:
+      - database
+  database:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=yvan2021
+      - MYSQL_DATABASE=hotelmanagement
